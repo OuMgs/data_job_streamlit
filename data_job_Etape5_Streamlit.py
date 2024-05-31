@@ -513,8 +513,9 @@ elif page == pages[5]:
      elif modele_choisi == "SVM":
           modele_selectionne =  SVM
  
-     mapping_multiple = {0: 'Declined', 1: 'No', 2: 'Yes'}
-     mapping_unique = {0: 'No', 1: 'Yes'}
+     mapping_multiple = { 2: 'Yes', 1: 'No' }
+   # mapping_multiple = {0: 'Declined', 1: 'No', 2: 'Yes'}
+     mapping_unique = {1: 'Yes', 0: 'No' }
 
 # Mapping inverse pour convertir les réponses en valeurs numériques pour les modèles
      inverse_mapping_multiple = {v: k for k, v in mapping_multiple.items()}
