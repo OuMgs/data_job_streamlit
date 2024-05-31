@@ -44,7 +44,7 @@ pages=["Présentation du projet", "Données", "Analyse exploratoire et statistiq
        "Modélisation", "Démo"]
 page=st.sidebar.radio("Menu", pages)
 
-st.sidebar.image("Streamlit_DataJob\photo_data.jpg", use_column_width=True)
+st.sidebar.image("photo_data.jpg", use_column_width=True)
 st.sidebar.text("")
 
 
