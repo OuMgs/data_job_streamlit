@@ -44,7 +44,7 @@ pages=["Présentation du projet", "Données", "Analyse exploratoire et statistiq
        "Modélisation", "Démo"]
 page=st.sidebar.radio("Menu", pages)
 
-st.sidebar.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\photo_data.jpg", use_column_width=True)
+st.sidebar.image("Streamlit_DataJob\photo_data.jpg", use_column_width=True)
 st.sidebar.text("")
 
 
@@ -209,7 +209,7 @@ elif page == pages[2]:
 
     st.write("Après avoir examiné le profil global des participants, nous avons cherché à réduire le questionnaire aux dix questions les plus pertinentes.")
     st.write("Pour évaluer la relation entre la variable cible et les variables explicatives, nous avons utilisé le test du Chi2, avec deux méthodes distinctes en fonction du type de question (multiple ou unique):")
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\chi2.png", width=600)
+    st.image("chi2.png", width=600)
     st.write("")
     if st.checkbox ("<< Cocher cette case pour voir le Top 10 des questions"):
         st.markdown("""
@@ -233,7 +233,7 @@ elif page == pages[2]:
 elif page == pages[3]:
     st.title (":orange[Stratégie d'encoding]")
     st.write("")
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\encodage.png", use_column_width=True)
+    st.image("encodage.png", use_column_width=True)
     st.write("")
     st.title (":orange[PCA]")
     st.write("")
@@ -253,8 +253,8 @@ elif page == pages[3]:
 10.	Depuis combien d'années écrivez-vous du code et/ou programmez-vous ?
 """
 )
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\PCA1.png", use_column_width=True)
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\PCA2.png", use_column_width=True)
+    st.image("PCA1.png", use_column_width=True)
+    st.image("PCA2.png", use_column_width=True)
     st.write("")
     
     st.warning("Les 6 questions ci-dessous permettent une distinction métier réaliste et cohérente vis-à-vis de l’industrie de la data. Pour autant nous notons une proximité réelle entre certains métiers qui risquent de troubler l’interprétation du modèle.")
@@ -300,13 +300,13 @@ elif page == pages[4]:
     fig.update_layout(xaxis=dict(tickangle=45))
     st.plotly_chart(fig)
 
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\matrice_de_confusion.png", use_column_width=True)
+    st.image("matrice_de_confusion.png", use_column_width=True)
     
     st.write("")
     
     st.write("Réduction du nombre de questions à la suite de l'exploration du Top10 Chi2")
 
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\comparaison_modeles.png", use_column_width=True)
+    st.image("comparaison_modeles.png", use_column_width=True)
     
     grouped_columns = {}
 
@@ -374,7 +374,7 @@ elif page == pages[4]:
 
     st.title(":orange[Initialisation des modèles]")
     st.write("")
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\accuracy.png", use_column_width=True)
+    st.image("accuracy.png", use_column_width=True)
 
     # Supprimer les colonnes inutiles
     df2.drop(['Q5', 'Q5_inverse'], axis=1, inplace=True)
