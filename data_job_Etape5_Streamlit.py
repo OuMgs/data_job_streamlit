@@ -397,8 +397,8 @@ elif page == pages[4]:
     # Charger les modèles
     ANN = joblib.load('ANN_model.joblib')
     arbre_decision = joblib.load("Arbre de Décision_model.joblib")
-    extra_tree = joblib.load("Extra Trees_model.joblib")
-    foret_aleatoire = joblib.load("Forêt Aléatoire_model.joblib")
+#    extra_tree = joblib.load("Extra Trees_model.joblib")
+#    foret_aleatoire = joblib.load("Forêt Aléatoire_model.joblib")
     gradient_boosting = joblib.load("Gradient Boosting Classifier_model.joblib")
     KNN = joblib.load("K Plus Proches Voisins (KNN)_model.joblib")
     naive_bayes = joblib.load("Naive Bayes_model.joblib")
@@ -406,7 +406,7 @@ elif page == pages[4]:
     SVM = joblib.load("SVM_model.joblib")
 
     # Sélection du modèle
-    modele_choisi = st.selectbox(label='Modèle', options=["ANN", "Arbre de décision", "Extra trees", "Forêt Aléatoire", "Gradient Boosting", "K Plus Proches Voisins (KNN)", "Naives Bayes", "Régression Logistique", "SVM"])
+    modele_choisi = st.selectbox(label='Modèle', options=["ANN", "Arbre de décision", "Gradient Boosting", "K Plus Proches Voisins (KNN)", "Naives Bayes", "Régression Logistique", "SVM"])
 
     # Fonction pour obtenir les prédictions
     def obtenir_predictions(modele_choisi):
@@ -414,10 +414,10 @@ elif page == pages[4]:
             y_pred = ANN.predict(X_test)
         elif modele_choisi == "Arbre de décision":
             y_pred = arbre_decision.predict(X_test)
-        elif modele_choisi == "Extra trees":
-            y_pred = extra_tree.predict(X_test)
-        elif modele_choisi == "Forêt Aléatoire":
-            y_pred = foret_aleatoire.predict(X_test)
+   #     elif modele_choisi == "Extra trees":
+    #        y_pred = extra_tree.predict(X_test)
+   #     elif modele_choisi == "Forêt Aléatoire":
+    #        y_pred = foret_aleatoire.predict(X_test)
         elif modele_choisi == "Gradient Boosting":
             y_pred = gradient_boosting.predict(X_test)
         elif modele_choisi == "K Plus Proches Voisins (KNN)":
@@ -481,8 +481,8 @@ elif page == pages[5]:
  # Charger les modèles
      ANN = joblib.load('ANN_model.joblib')
      arbre_decision = joblib.load("Arbre de Décision_model.joblib")
-     extra_tree = joblib.load("Extra Trees_model.joblib")
-     foret_aleatoire = joblib.load("Forêt Aléatoire_model.joblib")
+     # extra_tree = joblib.load("Extra Trees_model.joblib")
+    # foret_aleatoire = joblib.load("Forêt Aléatoire_model.joblib")
      gradient_boosting = joblib.load("Gradient Boosting Classifier_model.joblib")
      KNN = joblib.load("K Plus Proches Voisins (KNN)_model.joblib")
      naive_bayes = joblib.load("Naive Bayes_model.joblib")
@@ -491,17 +491,17 @@ elif page == pages[5]:
     
      st.subheader("Veuillez sélectionner un modèle et répondre aux questions pour effectuer une prédiction.") 
 
-     modele_choisi = st.selectbox(label='Modèle', options=["ANN", "Arbre de décision", "Extra trees", "Forêt Aléatoire", "Gradient Boosting", "K Plus Proches Voisins (KNN)", "Naives Bayes", "Régression Logistique", "SVM"])
+     modele_choisi = st.selectbox(label='Modèle', options=["ANN", "Arbre de décision", "Gradient Boosting", "K Plus Proches Voisins (KNN)", "Naives Bayes", "Régression Logistique", "SVM"])
 
 
      if modele_choisi == "ANN":
           modele_selectionne = ANN
      elif modele_choisi == "Arbre de décision":
           modele_selectionne = arbre_decision
-     elif modele_choisi == "Extra trees":
-          modele_selectionne =  extra_tree
-     elif modele_choisi == "Forêt Aléatoire":
-          modele_selectionne = foret_aleatoire
+     #elif modele_choisi == "Extra trees":
+      #    modele_selectionne =  extra_tree
+     # elif modele_choisi == "Forêt Aléatoire":
+       #   modele_selectionne = foret_aleatoire
      elif modele_choisi == "Gradient Boosting":
           modele_selectionne = gradient_boosting
      elif modele_choisi == "K Plus Proches Voisins (KNN)":
