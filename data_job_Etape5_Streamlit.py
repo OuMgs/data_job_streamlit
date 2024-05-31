@@ -528,7 +528,7 @@ elif page == pages[5]:
 # Q5','Q23', 'Q4_', 'Q7_','Q9_', 'Q15', 'Q38']
 
 # Définir les questions du questionnaire et leurs options
-      mapping_questions = {
+    mapping_questions = {
          '1 - Select any activities that make up an important part of your role at work: (Select all that apply)': {
              'Analyze and understand data to influence product or business decisions': 'Q23_Analyze and understand data to influence product or business decisions',
              'Build and/or run the data infrastructure that my business uses for storing, analyzing, and operationalizing data': 'Q23_Build and/or run the data infrastructure that my business uses for storing, analyzing, and operationalizing data',
