@@ -528,7 +528,7 @@ elif page == pages[5]:
 # Q5','Q23', 'Q4_', 'Q7_','Q9_', 'Q15', 'Q38']
 
 # Définir les questions du questionnaire et leurs options
-     mapping_questions = {
+      mapping_questions = {
          '1 - Select any activities that make up an important part of your role at work: (Select all that apply)': {
              'Analyze and understand data to influence product or business decisions': 'Q23_Analyze and understand data to influence product or business decisions',
              'Build and/or run the data infrastructure that my business uses for storing, analyzing, and operationalizing data': 'Q23_Build and/or run the data infrastructure that my business uses for storing, analyzing, and operationalizing data',
@@ -540,13 +540,14 @@ elif page == pages[5]:
              'Other': 'Q23_Other'},
          
          '2 - What is the highest level of formal education that you have attained or plan to attain within the next 2 years?': {
-             'Bachelor’s degree': 'Q4_Bachelor’s degree',
-             'Doctoral degree': 'Q4_Doctoral degree',
-             'I prefer not to answer': 'Q4_I prefer not to answer',
-             'Master’s degree': 'Q4_Master’s degree',
              'No formal education past high school': 'Q4_No formal education past high school',
              'Professional degree': 'Q4_Professional degree',
-             'Some college/university study without earning a bachelor’s degree': 'Q4_Some college/university study without earning a bachelor’s degree',},
+             'Bachelor’s degree': 'Q4_Bachelor’s degree',
+             'Master’s degree': 'Q4_Master’s degree',
+             'Doctoral degree': 'Q4_Doctoral degree',
+             'Some college/university study without earning a bachelor’s degree': 'Q4_Some college/university study without earning a bachelor’s degree',        
+             'I prefer not to answer': 'Q4_I prefer not to answer',
+             },
          
          '3 - What programming languages do you use on a regular basis? (Select all that apply)': {
              'Python': 'Q7_Python',
@@ -576,15 +577,16 @@ elif page == pages[5]:
              'Other': 'Q9_Other',},
          
          "5 - For how many years have you used machine learning methods?": {
+             'Under 1 year': 'Q15_Under 1 year',
              '1-2 years': 'Q15_1-2 years',
-             '10-20 years': 'Q15_10-20 years',
              '2-3 years': 'Q15_2-3 years',
-             '20 or more years': 'Q15_20 or more years',
              '3-4 years': 'Q15_3-4 years',
              '4-5 years': 'Q15_4-5 years',
-             '5-10 years': 'Q15_5-10 years',
+             '5-10 years': 'Q15_5-10 years', 
+             '10-20 years': 'Q15_10-20 years',
+             '20 or more years': 'Q15_20 or more years',
              'I do not use machine learning methods': 'Q15_I do not use machine learning methods',
-             'Under 1 year': 'Q15_Under 1 year',},
+             },
          
          "6 - What is the primary tool that you use at work or school to analyze data?": {
              'Advanced statistical software (SPSS, SAS, etc.)': 'Q38_Advanced statistical software (SPSS, SAS, etc.)',
