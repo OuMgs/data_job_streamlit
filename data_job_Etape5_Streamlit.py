@@ -32,7 +32,7 @@ warnings.filterwarnings("ignore", category=UserWarning)
 #fonction d'importation de données avec cache pour plus de rapidité d'exécution
 @st.cache_data
 def load_data():
-  data = pd.read_csv("kaggle_survey_2020_responses.csv", sep =",", low_memory = False)
+    data = pd.read_csv("kaggle_survey_2020_responses.csv", sep =",", low_memory = False)
 df = load_data()
  
 @st.cache_data
@@ -44,7 +44,7 @@ pages=["Présentation du projet", "Données", "Analyse exploratoire et statistiq
        "Modélisation", "Démo"]
 page=st.sidebar.radio("Menu", pages)
 
-st.sidebar.image("photo_data.jpg", use_column_width=True)
+st.sidebar.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\photo_data.jpg", use_column_width=True)
 st.sidebar.text("")
 
 
@@ -89,6 +89,7 @@ Notre projet est à 100% un questionnaire, avec des questions à choix multiples
 )
 
     st.title(":orange[Préparation des données]")
+    df0 = pd.read_csv("data_job_donnees_pretraitees_NoNaN0.csv", sep =",", low_memory = False)
     st.subheader(":orange[Nettoyage du JDD]")
     st.markdown("""
 Afin d'avoir un jeu de données exploitables, nous avons procédé à quelques suppressions :
@@ -103,11 +104,10 @@ Afin d'avoir un jeu de données exploitables, nous avons procédé à quelques s
     st.subheader(":orange[Réduction des dimensions]")
     
     st.write("Nous avons exclu des classes non pertinentes pour notre objectif : « Student », « Currently not employed » et « Other ». Cela a conduit à une réduction du nombre de répondants à 10 717, soit une perte d'environ 46 % par rapport au jeu de données initial. ")
-    st.image("variable cible avant suppression.png", use_column_width=True)
-  #   value_counts_q5 = df0['Q5'].value_counts()
- #   fig1 = px.pie(labels=value_counts_q5.index, values=value_counts_q5.values, names=value_counts_q5.index, color_discrete_sequence=px.colors.qualitative.Pastel)
-  #  fig1.update_layout(title='Répartition des variables cibles avant suppression 3 classes', showlegend=True)
-  #  st.plotly_chart(fig1)
+    value_counts_q5 = df0['Q5'].value_counts()
+    fig1 = px.pie(labels=value_counts_q5.index, values=value_counts_q5.values, names=value_counts_q5.index, color_discrete_sequence=px.colors.qualitative.Pastel)
+    fig1.update_layout(title='Répartition des variables cibles avant suppression 3 classes', showlegend=True)
+    st.plotly_chart(fig1)
     
     df3 = pd.read_csv("data_job_donnees_pretraitees_NoNaN.csv", sep =",", low_memory = False)
     value_counts_q5 = df3['Q5'].value_counts()
@@ -209,7 +209,7 @@ elif page == pages[2]:
 
     st.write("Après avoir examiné le profil global des participants, nous avons cherché à réduire le questionnaire aux dix questions les plus pertinentes.")
     st.write("Pour évaluer la relation entre la variable cible et les variables explicatives, nous avons utilisé le test du Chi2, avec deux méthodes distinctes en fonction du type de question (multiple ou unique):")
-    st.image("chi2.png", width=600)
+    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\chi2.png", width=600)
     st.write("")
     if st.checkbox ("<< Cocher cette case pour voir le Top 10 des questions"):
         st.markdown("""
@@ -233,7 +233,7 @@ elif page == pages[2]:
 elif page == pages[3]:
     st.title (":orange[Stratégie d'encoding]")
     st.write("")
-    st.image("encodage.png", use_column_width=True)
+    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\encodage.png", use_column_width=True)
     st.write("")
     st.title (":orange[PCA]")
     st.write("")
@@ -253,8 +253,8 @@ elif page == pages[3]:
 10.	Depuis combien d'années écrivez-vous du code et/ou programmez-vous ?
 """
 )
-    st.image("PCA1.png", use_column_width=True)
-    st.image("PCA2.png", use_column_width=True)
+    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\PCA1.png", use_column_width=True)
+    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\PCA2.png", use_column_width=True)
     st.write("")
     
     st.warning("Les 6 questions ci-dessous permettent une distinction métier réaliste et cohérente vis-à-vis de l’industrie de la data. Pour autant nous notons une proximité réelle entre certains métiers qui risquent de troubler l’interprétation du modèle.")
@@ -300,13 +300,13 @@ elif page == pages[4]:
     fig.update_layout(xaxis=dict(tickangle=45))
     st.plotly_chart(fig)
 
-    st.image("matrice_de_confusion.png", use_column_width=True)
+    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\matrice_de_confusion.png", use_column_width=True)
     
     st.write("")
     
     st.write("Réduction du nombre de questions à la suite de l'exploration du Top10 Chi2")
 
-    st.image("comparaison_modeles.png", use_column_width=True)
+    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\comparaison_modeles.png", use_column_width=True)
     
     grouped_columns = {}
 
@@ -374,7 +374,7 @@ elif page == pages[4]:
 
     st.title(":orange[Initialisation des modèles]")
     st.write("")
-    st.image("accuracy.png", use_column_width=True)
+    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\accuracy.png", use_column_width=True)
 
     # Supprimer les colonnes inutiles
     df2.drop(['Q5', 'Q5_inverse'], axis=1, inplace=True)
@@ -397,8 +397,8 @@ elif page == pages[4]:
     # Charger les modèles
     ANN = joblib.load('ANN_model.joblib')
     arbre_decision = joblib.load("Arbre de Décision_model.joblib")
-#    extra_tree = joblib.load("Extra Trees_model.joblib")
-#    foret_aleatoire = joblib.load("Forêt Aléatoire_model.joblib")
+    extra_tree = joblib.load("Extra Trees_model.joblib")
+    foret_aleatoire = joblib.load("Forêt Aléatoire_model.joblib")
     gradient_boosting = joblib.load("Gradient Boosting Classifier_model.joblib")
     KNN = joblib.load("K Plus Proches Voisins (KNN)_model.joblib")
     naive_bayes = joblib.load("Naive Bayes_model.joblib")
@@ -406,7 +406,7 @@ elif page == pages[4]:
     SVM = joblib.load("SVM_model.joblib")
 
     # Sélection du modèle
-    modele_choisi = st.selectbox(label='Modèle', options=["ANN", "Arbre de décision", "Gradient Boosting", "K Plus Proches Voisins (KNN)", "Naives Bayes", "Régression Logistique", "SVM"])
+    modele_choisi = st.selectbox(label='Modèle', options=["ANN", "Arbre de décision", "Extra trees", "Forêt Aléatoire", "Gradient Boosting", "K Plus Proches Voisins (KNN)", "Naives Bayes", "Régression Logistique", "SVM"])
 
     # Fonction pour obtenir les prédictions
     def obtenir_predictions(modele_choisi):
@@ -414,10 +414,10 @@ elif page == pages[4]:
             y_pred = ANN.predict(X_test)
         elif modele_choisi == "Arbre de décision":
             y_pred = arbre_decision.predict(X_test)
-   #     elif modele_choisi == "Extra trees":
-    #        y_pred = extra_tree.predict(X_test)
-   #     elif modele_choisi == "Forêt Aléatoire":
-    #        y_pred = foret_aleatoire.predict(X_test)
+        elif modele_choisi == "Extra trees":
+            y_pred = extra_tree.predict(X_test)
+        elif modele_choisi == "Forêt Aléatoire":
+            y_pred = foret_aleatoire.predict(X_test)
         elif modele_choisi == "Gradient Boosting":
             y_pred = gradient_boosting.predict(X_test)
         elif modele_choisi == "K Plus Proches Voisins (KNN)":
@@ -452,7 +452,7 @@ elif page == pages[4]:
 
     # Créer la heatmap
     plt.figure(figsize=(10, 8))
-    heatmap = sns.heatmap(conf_matrix_percent, annot=True, fmt=".2f", cmap='RdYlBu')
+    heatmap = sns.heatmap(conf_matrix_percent, annot=True, fmt=".2f", cmap='RdYlBu' )
     heatmap.set_xlabel('Valeurs Prédites')
     heatmap.set_ylabel('Valeurs Réelles')
     heatmap.set_title('Matrice de Confusion (Pourcentages)')
@@ -481,8 +481,8 @@ elif page == pages[5]:
  # Charger les modèles
      ANN = joblib.load('ANN_model.joblib')
      arbre_decision = joblib.load("Arbre de Décision_model.joblib")
-     # extra_tree = joblib.load("Extra Trees_model.joblib")
-    # foret_aleatoire = joblib.load("Forêt Aléatoire_model.joblib")
+     extra_tree = joblib.load("Extra Trees_model.joblib")
+     foret_aleatoire = joblib.load("Forêt Aléatoire_model.joblib")
      gradient_boosting = joblib.load("Gradient Boosting Classifier_model.joblib")
      KNN = joblib.load("K Plus Proches Voisins (KNN)_model.joblib")
      naive_bayes = joblib.load("Naive Bayes_model.joblib")
@@ -491,17 +491,17 @@ elif page == pages[5]:
     
      st.subheader("Veuillez sélectionner un modèle et répondre aux questions pour effectuer une prédiction.") 
 
-     modele_choisi = st.selectbox(label='Modèle', options=["ANN", "Arbre de décision", "Gradient Boosting", "K Plus Proches Voisins (KNN)", "Naives Bayes", "Régression Logistique", "SVM"])
+     modele_choisi = st.selectbox(label='Modèle', options=["ANN", "Arbre de décision", "Extra trees", "Forêt Aléatoire", "Gradient Boosting", "K Plus Proches Voisins (KNN)", "Naives Bayes", "Régression Logistique", "SVM"])
 
 
      if modele_choisi == "ANN":
           modele_selectionne = ANN
      elif modele_choisi == "Arbre de décision":
           modele_selectionne = arbre_decision
-     #elif modele_choisi == "Extra trees":
-      #    modele_selectionne =  extra_tree
-     # elif modele_choisi == "Forêt Aléatoire":
-       #   modele_selectionne = foret_aleatoire
+     elif modele_choisi == "Extra trees":
+          modele_selectionne =  extra_tree
+     elif modele_choisi == "Forêt Aléatoire":
+          modele_selectionne = foret_aleatoire
      elif modele_choisi == "Gradient Boosting":
           modele_selectionne = gradient_boosting
      elif modele_choisi == "K Plus Proches Voisins (KNN)":
@@ -513,9 +513,9 @@ elif page == pages[5]:
      elif modele_choisi == "SVM":
           modele_selectionne =  SVM
  
-     mapping_multiple = { 2: 'Yes', 1: 'No' }
-   # mapping_multiple = {0: 'Declined', 1: 'No', 2: 'Yes'}
-     mapping_unique = {1: 'Yes', 0: 'No' }
+     #mapping_multiple = {0: 'Declined', 1: 'No', 2: 'Yes'}
+     mapping_multiple = { 1: 'No', 2: 'Yes'}
+     mapping_unique = {0: 'No', 1: 'Yes'}
 
 # Mapping inverse pour convertir les réponses en valeurs numériques pour les modèles
      inverse_mapping_multiple = {v: k for k, v in mapping_multiple.items()}
@@ -528,7 +528,7 @@ elif page == pages[5]:
 # Q5','Q23', 'Q4_', 'Q7_','Q9_', 'Q15', 'Q38']
 
 # Définir les questions du questionnaire et leurs options
-    mapping_questions = {
+     mapping_questions = {
          '1 - Select any activities that make up an important part of your role at work: (Select all that apply)': {
              'Analyze and understand data to influence product or business decisions': 'Q23_Analyze and understand data to influence product or business decisions',
              'Build and/or run the data infrastructure that my business uses for storing, analyzing, and operationalizing data': 'Q23_Build and/or run the data infrastructure that my business uses for storing, analyzing, and operationalizing data',
@@ -625,8 +625,6 @@ elif page == pages[5]:
             for classe, probabilite in zip(classes, probabilites[0]):
                 st.subheader(f'{classe} : {probabilite* 100:.2f}%')
 
-    
-    
 
     
     
