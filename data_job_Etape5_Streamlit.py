@@ -452,7 +452,7 @@ elif page == pages[4]:
 
     # Créer la heatmap
     plt.figure(figsize=(10, 8))
-    heatmap = sns.heatmap(conf_matrix_percent, annot=True, fmt=".2f", cmap=["#e74c3c", "#f1c40f","#2ecc71" ])
+    heatmap = sns.heatmap(conf_matrix_percent, annot=True, fmt=".2f", cmap='RdYlBu')
     heatmap.set_xlabel('Valeurs Prédites')
     heatmap.set_ylabel('Valeurs Réelles')
     heatmap.set_title('Matrice de Confusion (Pourcentages)')
