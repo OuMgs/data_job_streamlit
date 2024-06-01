@@ -511,72 +511,71 @@ elif page == pages[5]:
 
 # Définir les questions du questionnaire et leurs options
      mapping_questions = {
-         '1 - Select any activities that make up an important part of your role at work: (Select all that apply)': {
-             'Analyze and understand data to influence product or business decisions': 'Q23_Analyze and understand data to influence product or business decisions',
-             'Build and/or run the data infrastructure that my business uses for storing, analyzing, and operationalizing data': 'Q23_Build and/or run the data infrastructure that my business uses for storing, analyzing, and operationalizing data',
-             'Build prototypes to explore applying machine learning to new areas': 'Q23_Build prototypes to explore applying machine learning to new areas',
-             'Build and/or run a machine learning service that operationally improves my product or workflows': 'Q23_Build and/or run a machine learning service that operationally improves my product or workflows',
-             'Experimentation and iteration to improve existing ML models': 'Q23_Experimentation and iteration to improve existing ML models',
-             'Do research that advances the state of the art of machine learning': 'Q23_Do research that advances the state of the art of machine learning',
-             'None of these activities are an important part of my role at work': 'Q23_None of these activities are an important part of my role at work',
-             'Other': 'Q23_Other'},
-         
-         '2 - What is the highest level of formal education that you have attained or plan to attain within the next 2 years?': {
-             'No formal education past high school': 'Q4_No formal education past high school',
-             'Professional degree': 'Q4_Professional degree',
-             'Bachelor’s degree': 'Q4_Bachelor’s degree',
-             'Master’s degree': 'Q4_Master’s degree',
-             'Doctoral degree': 'Q4_Doctoral degree',
-             'Some college/university study without earning a bachelor’s degree': 'Q4_Some college/university study without earning a bachelor’s degree',        
-             'I prefer not to answer': 'Q4_I prefer not to answer',
-             },
-         
-         '3 - What programming languages do you use on a regular basis? (Select all that apply)': {
-             'Python': 'Q7_Python',
-             'R': 'Q7_R',
-             'SQL': 'Q7_SQL',
-             'C': 'Q7_C',
-             'C++': 'Q7_C++',
-             'Java': 'Q7_Java',
-             'Javascript': 'Q7_Javascript',
-             'Julia': 'Q7_Julia',
-             'Swift': 'Q7_Swift',
-             'Bash': 'Q7_Bash',
-             'MATLAB': 'Q7_MATLAB',
-             'Other': 'Q7_Other',},
-         
-         "4 - Which of the following integrated development environments (IDE's) do you use on a regular basis? (Select all that apply)": {
-             'Jupyter (JupyterLab, Jupyter Notebooks, etc)': 'Q9_Jupyter (JupyterLab, Jupyter Notebooks, etc) ',
-             'RStudio': 'Q9_RStudio ',
-             'Visual Studio': 'Q9_Visual Studio',
-             'Visual Studio Code (VSCode)': 'Q9_Visual Studio Code (VSCode)',
-             'PyCharm': 'Q9_PyCharm ',
-             'Spyder':  'Q9_Spyder  ',
-             'Notepad++': 'Q9_Notepad++  ',
-             'Sublime Text': 'Q9_Sublime Text  ',
-             'Vim / Emacs': 'Q9_Vim / Emacs  ',
-             'MATLAB': 'Q9_MATLAB ',
-             'Other': 'Q9_Other',},
-         
-         "5 - For how many years have you used machine learning methods?": {
-             'Under 1 year': 'Q15_Under 1 year',
-             '1-2 years': 'Q15_1-2 years',
-             '2-3 years': 'Q15_2-3 years',
-             '3-4 years': 'Q15_3-4 years',
-             '4-5 years': 'Q15_4-5 years',
-             '5-10 years': 'Q15_5-10 years', 
-             '10-20 years': 'Q15_10-20 years',
-             '20 or more years': 'Q15_20 or more years',
-             'I do not use machine learning methods': 'Q15_I do not use machine learning methods',
-             },
-         
-         "6 - What is the primary tool that you use at work or school to analyze data?": {
-             'Advanced statistical software (SPSS, SAS, etc.)': 'Q38_Advanced statistical software (SPSS, SAS, etc.)',
-             'Basic statistical software (Microsoft Excel, Google Sheets, etc.)': 'Q38_Basic statistical software (Microsoft Excel, Google Sheets, etc.)',
-             'Business intelligence software (Salesforce, Tableau, Spotfire, etc.)': 'Q38_Business intelligence software (Salesforce, Tableau, Spotfire, etc.)',
-             'Cloud-based data software & APIs (AWS, GCP, Azure, etc.)': 'Q38_Cloud-based data software & APIs (AWS, GCP, Azure, etc.)',
-             'Local development environments (RStudio, JupyterLab, etc.)': 'Q38_Local development environments (RStudio, JupyterLab, etc.)',
-             'Other': 'Q38_Other'}
+        
+             '1 - Select any activities that make up an important part of your role at work: (Select all that apply)': {
+                 'Analyze and understand data to influence product or business decisions': 'Q23_Analyze and understand data to influence product or business decisions',
+                 'Build and/or run the data infrastructure that my business uses for storing, analyzing, and operationalizing data': 'Q23_Build and/or run the data infrastructure that my business uses for storing, analyzing, and operationalizing data',
+                 'Build prototypes to explore applying machine learning to new areas': 'Q23_Build prototypes to explore applying machine learning to new areas',
+                 'Build and/or run a machine learning service that operationally improves my product or workflows': 'Q23_Build and/or run a machine learning service that operationally improves my product or workflows',
+                 'Experimentation and iteration to improve existing ML models': 'Q23_Experimentation and iteration to improve existing ML models',
+                 'Do research that advances the state of the art of machine learning': 'Q23_Do research that advances the state of the art of machine learning',
+                 'None of these activities are an important part of my role at work': 'Q23_None of these activities are an important part of my role at work',
+                 'Other': 'Q23_Other'},
+             
+             '2 - What is the highest level of formal education that you have attained or plan to attain within the next 2 years?': {
+                 'Bachelor’s degree': 'Q4_Bachelor’s degree',
+                 'Doctoral degree': 'Q4_Doctoral degree',
+                 'I prefer not to answer': 'Q4_I prefer not to answer',
+                 'Master’s degree': 'Q4_Master’s degree',
+                 'No formal education past high school': 'Q4_No formal education past high school',
+                 'Professional degree': 'Q4_Professional degree',
+                 'Some college/university study without earning a bachelor’s degree': 'Q4_Some college/university study without earning a bachelor’s degree',},
+             
+             '3 - What programming languages do you use on a regular basis? (Select all that apply)': {
+                 'Python': 'Q7_Python',
+                 'R': 'Q7_R',
+                 'SQL': 'Q7_SQL',
+                 'C': 'Q7_C',
+                 'C++': 'Q7_C++',
+                 'Java': 'Q7_Java',
+                 'Javascript': 'Q7_Javascript',
+                 'Julia': 'Q7_Julia',
+                 'Swift': 'Q7_Swift',
+                 'Bash': 'Q7_Bash',
+                 'MATLAB': 'Q7_MATLAB',
+                 'Other': 'Q7_Other',},
+             
+             "4 - Which of the following integrated development environments (IDE's) do you use on a regular basis? (Select all that apply)": {
+                 'Jupyter (JupyterLab, Jupyter Notebooks, etc)': 'Q9_Jupyter (JupyterLab, Jupyter Notebooks, etc) ',
+                 'RStudio': 'Q9_RStudio ',
+                 'Visual Studio': 'Q9_Visual Studio',
+                 'Visual Studio Code (VSCode)': 'Q9_Visual Studio Code (VSCode)',
+                 'PyCharm': 'Q9_PyCharm ',
+                 'Spyder':  'Q9_Spyder  ',
+                 'Notepad++': 'Q9_Notepad++  ',
+                 'Sublime Text': 'Q9_Sublime Text  ',
+                 'Vim / Emacs': 'Q9_Vim / Emacs  ',
+                 'MATLAB': 'Q9_MATLAB ',
+                 'Other': 'Q9_Other',},
+             
+             "5 - For how many years have you used machine learning methods?": {
+                 '1-2 years': 'Q15_1-2 years',
+                 '10-20 years': 'Q15_10-20 years',
+                 '2-3 years': 'Q15_2-3 years',
+                 '20 or more years': 'Q15_20 or more years',
+                 '3-4 years': 'Q15_3-4 years',
+                 '4-5 years': 'Q15_4-5 years',
+                 '5-10 years': 'Q15_5-10 years',
+                 'I do not use machine learning methods': 'Q15_I do not use machine learning methods',
+                 'Under 1 year': 'Q15_Under 1 year',},
+             
+             "6 - What is the primary tool that you use at work or school to analyze data?": {
+                 'Advanced statistical software (SPSS, SAS, etc.)': 'Q38_Advanced statistical software (SPSS, SAS, etc.)',
+                 'Basic statistical software (Microsoft Excel, Google Sheets, etc.)': 'Q38_Basic statistical software (Microsoft Excel, Google Sheets, etc.)',
+                 'Business intelligence software (Salesforce, Tableau, Spotfire, etc.)': 'Q38_Business intelligence software (Salesforce, Tableau, Spotfire, etc.)',
+                 'Cloud-based data software & APIs (AWS, GCP, Azure, etc.)': 'Q38_Cloud-based data software & APIs (AWS, GCP, Azure, etc.)',
+                 'Local development environments (RStudio, JupyterLab, etc.)': 'Q38_Local development environments (RStudio, JupyterLab, etc.)',
+                 'Other': 'Q38_Other'}
      }
 
 
