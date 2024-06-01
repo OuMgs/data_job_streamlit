@@ -104,11 +104,11 @@ Afin d'avoir un jeu de données exploitables, nous avons procédé à quelques s
     st.subheader(":orange[Réduction des dimensions]")
     
     st.write("Nous avons exclu des classes non pertinentes pour notre objectif : « Student », « Currently not employed » et « Other ». Cela a conduit à une réduction du nombre de répondants à 10 717, soit une perte d'environ 46 % par rapport au jeu de données initial. ")
-    value_counts_q5 = df0['Q5'].value_counts()
+  #  value_counts_q5 = df0['Q5'].value_counts()
  #   fig1 = px.pie(labels=value_counts_q5.index, values=value_counts_q5.values, names=value_counts_q5.index, color_discrete_sequence=px.colors.qualitative.Pastel)
  #   fig1.update_layout(title='Répartition des variables cibles avant suppression 3 classes', showlegend=True)
   #  st.plotly_chart(fig1)
-    st.image("
+    st.image("variable cible avant suppression.png")
     df3 = pd.read_csv("data_job_donnees_pretraitees_NoNaN.csv", sep =",", low_memory = False)
     value_counts_q5 = df3['Q5'].value_counts()
     fig2 = px.pie(labels=value_counts_q5.index, values=value_counts_q5.values, names=value_counts_q5.index, color_discrete_sequence=px.colors.qualitative.Pastel)
