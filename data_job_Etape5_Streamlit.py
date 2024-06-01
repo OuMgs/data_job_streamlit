@@ -2,7 +2,7 @@
 """
 Created on Sun May 12 22:57:38 2024
 
-@author: Olivia_Anca_Oumou_
+@author: Olivia_Anca_Oumou
 """
 
 import streamlit as st
@@ -44,7 +44,7 @@ pages=["Présentation du projet", "Données", "Analyse exploratoire et statistiq
        "Modélisation", "Démo"]
 page=st.sidebar.radio("Menu", pages)
 
-st.sidebar.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\photo_data.jpg", use_column_width=True)
+st.sidebar.image("photo_data.jpg", use_column_width=True)
 st.sidebar.text("")
 
 
@@ -89,7 +89,7 @@ Notre projet est à 100% un questionnaire, avec des questions à choix multiples
 )
 
     st.title(":orange[Préparation des données]")
-    df0 = pd.read_csv("data_job_donnees_pretraitees_NoNaN0.csv", sep =",", low_memory = False)
+#    df0 = pd.read_csv("data_job_donnees_pretraitees_NoNaN0.csv", sep =",", low_memory = False)
     st.subheader(":orange[Nettoyage du JDD]")
     st.markdown("""
 Afin d'avoir un jeu de données exploitables, nous avons procédé à quelques suppressions :
@@ -105,10 +105,10 @@ Afin d'avoir un jeu de données exploitables, nous avons procédé à quelques s
     
     st.write("Nous avons exclu des classes non pertinentes pour notre objectif : « Student », « Currently not employed » et « Other ». Cela a conduit à une réduction du nombre de répondants à 10 717, soit une perte d'environ 46 % par rapport au jeu de données initial. ")
     value_counts_q5 = df0['Q5'].value_counts()
-    fig1 = px.pie(labels=value_counts_q5.index, values=value_counts_q5.values, names=value_counts_q5.index, color_discrete_sequence=px.colors.qualitative.Pastel)
-    fig1.update_layout(title='Répartition des variables cibles avant suppression 3 classes', showlegend=True)
-    st.plotly_chart(fig1)
-    
+ #   fig1 = px.pie(labels=value_counts_q5.index, values=value_counts_q5.values, names=value_counts_q5.index, color_discrete_sequence=px.colors.qualitative.Pastel)
+ #   fig1.update_layout(title='Répartition des variables cibles avant suppression 3 classes', showlegend=True)
+  #  st.plotly_chart(fig1)
+    st.image("
     df3 = pd.read_csv("data_job_donnees_pretraitees_NoNaN.csv", sep =",", low_memory = False)
     value_counts_q5 = df3['Q5'].value_counts()
     fig2 = px.pie(labels=value_counts_q5.index, values=value_counts_q5.values, names=value_counts_q5.index, color_discrete_sequence=px.colors.qualitative.Pastel)
@@ -253,8 +253,8 @@ elif page == pages[3]:
 10.	Depuis combien d'années écrivez-vous du code et/ou programmez-vous ?
 """
 )
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\PCA1.png", use_column_width=True)
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\PCA2.png", use_column_width=True)
+    st.image("PCA1.png", use_column_width=True)
+    st.image("PCA2.png", use_column_width=True)
     st.write("")
     
     st.warning("Les 6 questions ci-dessous permettent une distinction métier réaliste et cohérente vis-à-vis de l’industrie de la data. Pour autant nous notons une proximité réelle entre certains métiers qui risquent de troubler l’interprétation du modèle.")
@@ -300,13 +300,13 @@ elif page == pages[4]:
     fig.update_layout(xaxis=dict(tickangle=45))
     st.plotly_chart(fig)
 
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\matrice_de_confusion.png", use_column_width=True)
+    st.image("matrice_de_confusion.png", use_column_width=True)
     
     st.write("")
     
     st.write("Réduction du nombre de questions à la suite de l'exploration du Top10 Chi2")
 
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\comparaison_modeles.png", use_column_width=True)
+    st.image("comparaison_modeles.png", use_column_width=True)
     
     grouped_columns = {}
 
@@ -374,7 +374,7 @@ elif page == pages[4]:
 
     st.title(":orange[Initialisation des modèles]")
     st.write("")
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\accuracy.png", use_column_width=True)
+    st.image("accuracy.png", use_column_width=True)
 
     # Supprimer les colonnes inutiles
     df2.drop(['Q5', 'Q5_inverse'], axis=1, inplace=True)
@@ -397,8 +397,8 @@ elif page == pages[4]:
     # Charger les modèles
     ANN = joblib.load('ANN_model.joblib')
     arbre_decision = joblib.load("Arbre de Décision_model.joblib")
-    extra_tree = joblib.load("Extra Trees_model.joblib")
-    foret_aleatoire = joblib.load("Forêt Aléatoire_model.joblib")
+    # extra_tree = joblib.load("Extra Trees_model.joblib")
+    # foret_aleatoire = joblib.load("Forêt Aléatoire_model.joblib")
     gradient_boosting = joblib.load("Gradient Boosting Classifier_model.joblib")
     KNN = joblib.load("K Plus Proches Voisins (KNN)_model.joblib")
     naive_bayes = joblib.load("Naive Bayes_model.joblib")
@@ -406,7 +406,7 @@ elif page == pages[4]:
     SVM = joblib.load("SVM_model.joblib")
 
     # Sélection du modèle
-    modele_choisi = st.selectbox(label='Modèle', options=["ANN", "Arbre de décision", "Extra trees", "Forêt Aléatoire", "Gradient Boosting", "K Plus Proches Voisins (KNN)", "Naives Bayes", "Régression Logistique", "SVM"])
+    modele_choisi = st.selectbox(label='Modèle', options=["ANN", "Arbre de décision",  "Gradient Boosting", "K Plus Proches Voisins (KNN)", "Naives Bayes", "Régression Logistique", "SVM"])
 
     # Fonction pour obtenir les prédictions
     def obtenir_predictions(modele_choisi):
@@ -414,10 +414,10 @@ elif page == pages[4]:
             y_pred = ANN.predict(X_test)
         elif modele_choisi == "Arbre de décision":
             y_pred = arbre_decision.predict(X_test)
-        elif modele_choisi == "Extra trees":
-            y_pred = extra_tree.predict(X_test)
-        elif modele_choisi == "Forêt Aléatoire":
-            y_pred = foret_aleatoire.predict(X_test)
+      #  elif modele_choisi == "Extra trees":
+       #     y_pred = extra_tree.predict(X_test)
+       # elif modele_choisi == "Forêt Aléatoire":
+        #    y_pred = foret_aleatoire.predict(X_test)
         elif modele_choisi == "Gradient Boosting":
             y_pred = gradient_boosting.predict(X_test)
         elif modele_choisi == "K Plus Proches Voisins (KNN)":
@@ -458,31 +458,13 @@ elif page == pages[4]:
     heatmap.set_title('Matrice de Confusion (Pourcentages)')
     st.pyplot(plt)
 
-
-    # # Calcul des taux à partir de la matrice de confusion
-    # TP = conf_matrix[1, 1]
-    # FP = conf_matrix[0, 1]
-    # TN = conf_matrix[0, 0]
-    # FN = conf_matrix[1, 0]
-
-    # TPR = TP / (TP + FN)  # Taux de vrais positifs
-    # FPR = FP / (FP + TN)  # Taux de faux positifs
-    # TNR = TN / (TN + FP)  # Taux de vrais négatifs
-    # FNR = FN / (FN + TP)  # Taux de faux négatifs
-    # st.write("Taux de vrais positifs", TPR*100)
-    # st.write("Taux de faux positifs", FPR*100)
-    # st.write("Taux de vrais négatifs", TNR*100)
-    # st.write("Taux de faux négatifs", FNR*100)
-
-
-
 elif page == pages[5]:
     
  # Charger les modèles
      ANN = joblib.load('ANN_model.joblib')
      arbre_decision = joblib.load("Arbre de Décision_model.joblib")
-     extra_tree = joblib.load("Extra Trees_model.joblib")
-     foret_aleatoire = joblib.load("Forêt Aléatoire_model.joblib")
+   #  extra_tree = joblib.load("Extra Trees_model.joblib")
+    # foret_aleatoire = joblib.load("Forêt Aléatoire_model.joblib")
      gradient_boosting = joblib.load("Gradient Boosting Classifier_model.joblib")
      KNN = joblib.load("K Plus Proches Voisins (KNN)_model.joblib")
      naive_bayes = joblib.load("Naive Bayes_model.joblib")
@@ -491,17 +473,17 @@ elif page == pages[5]:
     
      st.subheader("Veuillez sélectionner un modèle et répondre aux questions pour effectuer une prédiction.") 
 
-     modele_choisi = st.selectbox(label='Modèle', options=["ANN", "Arbre de décision", "Extra trees", "Forêt Aléatoire", "Gradient Boosting", "K Plus Proches Voisins (KNN)", "Naives Bayes", "Régression Logistique", "SVM"])
+     modele_choisi = st.selectbox(label='Modèle', options=["ANN", "Arbre de décision",  "Gradient Boosting", "K Plus Proches Voisins (KNN)", "Naives Bayes", "Régression Logistique", "SVM"])
 
 
      if modele_choisi == "ANN":
           modele_selectionne = ANN
      elif modele_choisi == "Arbre de décision":
           modele_selectionne = arbre_decision
-     elif modele_choisi == "Extra trees":
-          modele_selectionne =  extra_tree
-     elif modele_choisi == "Forêt Aléatoire":
-          modele_selectionne = foret_aleatoire
+#     elif modele_choisi == "Extra trees":
+ #         modele_selectionne =  extra_tree
+  #   elif modele_choisi == "Forêt Aléatoire":
+   #       modele_selectionne = foret_aleatoire
      elif modele_choisi == "Gradient Boosting":
           modele_selectionne = gradient_boosting
      elif modele_choisi == "K Plus Proches Voisins (KNN)":
