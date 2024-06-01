@@ -209,7 +209,7 @@ elif page == pages[2]:
 
     st.write("Après avoir examiné le profil global des participants, nous avons cherché à réduire le questionnaire aux dix questions les plus pertinentes.")
     st.write("Pour évaluer la relation entre la variable cible et les variables explicatives, nous avons utilisé le test du Chi2, avec deux méthodes distinctes en fonction du type de question (multiple ou unique):")
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\chi2.png", width=600)
+    st.image("chi2.png", width=600)
     st.write("")
     if st.checkbox ("<< Cocher cette case pour voir le Top 10 des questions"):
         st.markdown("""
@@ -233,7 +233,7 @@ elif page == pages[2]:
 elif page == pages[3]:
     st.title (":orange[Stratégie d'encoding]")
     st.write("")
-    st.image(r"C:\Users\dorou\Documents\data_job\Streamlit_DataJob\encodage.png", use_column_width=True)
+    st.image("encodage.png", use_column_width=True)
     st.write("")
     st.title (":orange[PCA]")
     st.write("")
