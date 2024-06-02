@@ -253,10 +253,16 @@ elif page == pages[3]:
 10.	Depuis combien d'années écrivez-vous du code et/ou programmez-vous ?
 """
 )
-    st.image("PCA1.png", use_column_width=True)
-    st.image("PCA2.png", use_column_width=True)
+    st.image("PCA_8questions.png", use_column_width=True)
+    st.image("PCA_9questions.png", use_column_width=True)
+    st.image("PCA_10questions.png", use_column_width=True)
+    st.write("Les questions 22 et 6 ne contribuent pas significativement à la différenciation des métiers, puisque les PCAs #10, #9 et #8 questions présentent des similarités marquées.")
+    st.image("PCA_5questions.png", use_column_width=True)
+    st.image("PCA_6questions.png", use_column_width=True)
+    st.image("PCA_7questions.png", use_column_width=True)
+    st.write("PCA 7 questions a une orientation différente mais possède une répartition similaire à #8, souffre donc des mêmes limites. En revanche, #6 montre une belle distinction vis-à-vis des axes 0. Nous nous portons donc sur cette sélection.")
     st.write("")
-    
+
     st.warning("Les 6 questions ci-dessous permettent une distinction métier réaliste et cohérente vis-à-vis de l’industrie de la data. Pour autant nous notons une proximité réelle entre certains métiers qui risquent de troubler l’interprétation du modèle.")
     if st.checkbox ("<< Cocher cette case pour voir les 6 questions sélectionnées"):
         st.markdown("""
