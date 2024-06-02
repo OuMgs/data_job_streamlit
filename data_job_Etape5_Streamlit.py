@@ -29,6 +29,13 @@ from sklearn.model_selection import GridSearchCV, cross_val_score
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
+# Définir les couleurs
+primaryColor="#FF4B4B"
+backgroundColor="#C18E60"
+secondaryBackgroundColor="#B1B7CB"
+textColor="#31333F"
+font="serif"
+
 #fonction d'importation de données avec cache pour plus de rapidité d'exécution
 @st.cache_data
 def load_data():
