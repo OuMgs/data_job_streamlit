@@ -253,7 +253,7 @@ elif page == pages[3]:
 10.	Depuis combien d'années écrivez-vous du code et/ou programmez-vous ?
 """
 )
-    st.subtitle("PCA avec 8 questions")
+    st.subheader("PCA avec 8 questions")
     st.image("PCA_8questions.png", use_column_width=True)
     st.write("PCA 9 questions")
     st.image("PCA_9questions.png", use_column_width=True)
