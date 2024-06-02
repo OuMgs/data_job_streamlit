@@ -253,12 +253,18 @@ elif page == pages[3]:
 10.	Depuis combien d'années écrivez-vous du code et/ou programmez-vous ?
 """
 )
+    st.write("PCA 8 questions")
     st.image("PCA_8questions.png", use_column_width=True)
+    st.write("PCA 9 questions")
     st.image("PCA_9questions.png", use_column_width=True)
+    st.write("PCA 10 questions")
     st.image("PCA_10questions.png", use_column_width=True)
     st.write("Les questions 22 et 6 ne contribuent pas significativement à la différenciation des métiers, puisque les PCAs #10, #9 et #8 questions présentent des similarités marquées.")
+    st.write("PCA 5 questions")
     st.image("PCA_5questions.png", use_column_width=True)
+    st.write("PCA 6 questions")
     st.image("PCA_6questions.png", use_column_width=True)
+    st.write("PCA 7 questions")
     st.image("PCA_7questions.png", use_column_width=True)
     st.write("PCA 7 questions a une orientation différente mais possède une répartition similaire à #8, souffre donc des mêmes limites. En revanche, #6 montre une belle distinction vis-à-vis des axes 0. Nous nous portons donc sur cette sélection.")
     st.write("")
