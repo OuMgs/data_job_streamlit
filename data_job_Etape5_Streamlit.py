@@ -116,7 +116,7 @@ Afin d'avoir un jeu de données exploitables, nous avons procédé à quelques s
  #   fig1.update_layout(title='Répartition des variables cibles avant suppression 3 classes', showlegend=True)
   #  st.plotly_chart(fig1)
     st.image("variable cible avant suppression.png")
-    df3 = pd.read_csv("data_job_donnees_pretraitees_NoNaN.csv", sep =",", low_memory = False)
+    df3 = pd.read_csv("data_job_donnees_pretraitees_NoNaN1.csv", sep =",", low_memory = False)
     value_counts_q5 = df3['Q5'].value_counts()
     fig2 = px.pie(labels=value_counts_q5.index, values=value_counts_q5.values, names=value_counts_q5.index, color_discrete_sequence=px.colors.qualitative.Pastel)
     fig2.update_layout(title='Répartition des variables cibles après suppression 3 classes', showlegend=True)
