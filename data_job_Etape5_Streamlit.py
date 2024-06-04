@@ -260,19 +260,19 @@ elif page == pages[3]:
 10.	Depuis combien d'années écrivez-vous du code et/ou programmez-vous ?
 """
 )
-    st.subheader("PCA avec 8 questions")
-    st.image("PCA_8questions.png", use_column_width=True)
-    st.subheader("PCA avec 9 questions")
-    st.image("PCA_9questions.png", use_column_width=True)
     st.subheader("PCA avec 10 questions")
     st.image("PCA_10questions.png", use_column_width=True)
+    st.subheader("PCA avec 9 questions")
+    st.image("PCA_9questions.png", use_column_width=True)
+    st.subheader("PCA avec 8 questions")
+    st.image("PCA_8questions.png", use_column_width=True)
     st.write("Les questions 22 et 6 ne contribuent pas significativement à la différenciation des métiers, puisque les PCAs #10, #9 et #8 questions présentent des similarités marquées.")
-    st.subheader("PCA avec 5 questions")
-    st.image("PCA_5questions.png", use_column_width=True)
-    st.subheader("PCA avec 6 questions")
-    st.image("PCA_6questions.png", use_column_width=True)
     st.subheader("PCA avec 7 questions")
     st.image("PCA_7questions.png", use_column_width=True)
+    st.subheader("PCA avec 6 questions")
+    st.image("PCA_6questions.png", use_column_width=True)
+    st.subheader("PCA avec 5 questions")
+    st.image("PCA_5questions.png", use_column_width=True)
     st.write("PCA 7 questions a une orientation différente mais possède une répartition similaire à #8, souffre donc des mêmes limites. En revanche, #6 montre une belle distinction vis-à-vis des axes 0. Nous nous portons donc sur cette sélection.")
     st.write("")
 
@@ -621,13 +621,14 @@ elif page == pages[5]:
             if prediction == 'Analyst':
                  metier = 'Business Analyst ou Data Analyst'
             elif prediction == 'Engineer':
-                 metier = 'DBA, Database Engineer ou Software Engineer'
+                 metier = 'Database Engineer ou Software Engineer'
             elif prediction == 'Scientist':
                 metier = 'Data Scientist, Machine Learning Engineer ou Research Scientist'
             else:
                 metier = ''
     
-            st.subheader(f'Le modèle {modele_choisi} prédit : {prediction} soit {metier}')
+            st.subheader(f'Le modèle {modele_choisi} prédit : {prediction})
+            st.subheader(f'Vous pourriez occuper les fonctions de {metier}')
             st.subheader(f'Les probalités du modèle {modele_choisi} sont : ')
             for classe, probabilite in zip(classes, probabilites[0]):
                 st.subheader(f'{classe} : {probabilite* 100:.2f}%')
