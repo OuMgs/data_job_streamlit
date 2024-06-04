@@ -627,7 +627,7 @@ elif page == pages[5]:
             else:
                 metier = ''
     
-            st.subheader(f'Le modèle {modele_choisi} prédit : {prediction})
+            st.subheader(f'Le modèle {modele_choisi} prédit : {prediction}')
             st.subheader(f'Vous pourriez occuper les fonctions de {metier}')
             st.subheader(f'Les probalités du modèle {modele_choisi} sont : ')
             for classe, probabilite in zip(classes, probabilites[0]):
