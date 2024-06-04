@@ -618,9 +618,16 @@ elif page == pages[5]:
             prediction = modele_selectionne.predict(new_row)
             probabilites = modele_selectionne.predict_proba(new_row)
             classes = modele_selectionne.classes_
-
+            if prediction == 'Analyst':
+                 metier = 'Business Analyst ou Data Analyst'
+            elif prediction == 'Engineer':
+                 metier = 'DBA, Database Engineer ou Software Engineer'
+            elif prediction == 'Scientist':
+                metier = 'Data Scientist, Machine Learning Engineer ou Research Scientist'
+            else:
+                metier = ''
     
-            st.subheader(f'Le modèle {modele_choisi} prédit : {prediction}')
+            st.subheader(f'Le modèle {modele_choisi} prédit : {prediction} soit {metier}')
             st.subheader(f'Les probalités du modèle {modele_choisi} sont : ')
             for classe, probabilite in zip(classes, probabilites[0]):
                 st.subheader(f'{classe} : {probabilite* 100:.2f}%')
