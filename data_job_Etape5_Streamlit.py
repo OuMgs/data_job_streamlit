@@ -60,6 +60,7 @@ container.write("Formation continue - Data Analyst - Octobre 2023")
 container.write("Olivia SOULABAILLE")
 container.write ("Oumou MAGASSA")
 container.write("Anca DELVAL-CULCEA")
+container.write("Mentor - Thomas BOEHLER")
 
 
 
